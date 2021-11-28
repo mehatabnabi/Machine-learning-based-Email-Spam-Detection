@@ -26,3 +26,21 @@ The objective of this project is to build an efficient ML based email spam detec
 Feature extraction: TF-IDF
 
 Term frequency-Inverse document frequency uses all the tokens in the dataset as vocabulary.Frequency of occurrence of a token from vocabulary in each document consists of the term frequency and number of documents in which token occurs determines the Inverse document frequency.What this ensures is that,if a token occurs frequently in a document that token will have high TF but if that token occurs frequently in majority of documents then it reduces the IDF ,so stop words like an,the,i which occur frequently are penalized and important words which contain the essence of document get a boost.Both these TF and IDF matrices for a particular document are multiplied and normalized to form TF-IDF of a document.
+
+
+### Conclusion
+We observed that SVM-TFIDF vectorizer model perofomed the best with:
+Precision:0.939,
+Recall:0.991,
+F1 score:0.964,
+accuracy:0.989515,
+AUC:0.990027.
+
+The summary of the classification performance of all the ML models used is as follows:
+
+| Model     | Precision | Recall  | F1 | Accuracy |AUC|
+| ----------- | ----------- |--  |--|--|--|
+| TFIDF vectorizer with LogisticRegression      | 1.000       |0.972   |0.986  |0.996068  |0.986111  |
+| TFIDF vectorizer with SVM   | 0.939        |  0.991 |0.964  | 0.989515 |0.990027  |
+| TFIDF Vectorizer with Random Forest Classifier            |  1.000           | 0.935   | 0.967 |0.99082  | 0.967593 |
+| TFIDF Vectorizer with GradientBoosting Classifier            |   0.812          |   0.880 | 0.844 |0.954128  | 0.923021 |
