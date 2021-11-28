@@ -1,5 +1,3 @@
-# Email-Spam-Detection
-
 MACHINE LEARNING BASED SPAM EMAIL DETECTION
 Objective/Business Problem
 Email has become one of the most important forms of communication. Below are some of the stats concerning emails:
@@ -20,6 +18,11 @@ The data is then cleaned by removing any punctuation or special characters so th
 We then define a few functions to convert all the email content to plain text and build a dataframe out of it.
 Then we proceed to build the machine learning models by vectorizing the text using the TFIDF vectorizer and feeding the data into them.
 Since the data classes are unbalanced we evaluate each model based on different performance metrics (majorly the F-1 score and the AUC ROC scores). After selecting the best model, it is finally evaluated on the test set.
+Feature extraction: TF-IDF
+
+Term frequency-Inverse document frequency uses all the tokens in the dataset as vocabulary.Frequency of occurrence of a token from vocabulary in each document consists of the term frequency and number of documents in which token occurs determines the Inverse document frequency.What this ensures is that,if a token occurs frequently in a document that token will have high TF but if that token occurs frequently in majority of documents then it reduces the IDF ,so stop words like an,the,i which occur frequently are penalized and important words which contain the essence of document get a boost.Both these TF and IDF matrices for a particular document are multiplied and normalized to form TF-IDF of a document.
+
+Conclusion
 We observed that SVM-TFIDF vectorizer model perofomed the best with: Precision:0.939, Recall:0.991, F1 score:0.964, accuracy:0.989515, AUC:0.990027.
 
 The summary of the classification performance of all the ML models used is as follows:
