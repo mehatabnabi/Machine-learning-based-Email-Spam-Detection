@@ -14,3 +14,15 @@ In these collosal stats, Spam literally accounted for 47.3% of all email traffic
 
 
 The objective of this project is to build an efficient ML based email spam detector application. We are going to use 4 machine learning algorithms (Logistic regression, Support vector machine classifier (SVM), Random forest, Gradient boosting classifier) to classify the dateset containing spam and ham emails into their respective labels.
+
+
+### Methodology
+* We start with exploring the data and understanding the structure of the emails and their content.
+* The data is then cleaned by removing any punctuation or special characters so these don't contribute to the noise in the model.
+* We then define a few functions to convert all the email content to plain text and build a dataframe out of it.
+* Then we proceed to build the machine learning models by vectorizing the text using the TFIDF vectorizer and feeding the data into them.
+* Since the data classes are unbalanced we evaluate each model based on different performance metrics (majorly the F-1 score and the AUC ROC scores). After selecting the best model, it is finally evaluated on the test set.
+
+Feature extraction: TF-IDF
+
+Term frequency-Inverse document frequency uses all the tokens in the dataset as vocabulary.Frequency of occurrence of a token from vocabulary in each document consists of the term frequency and number of documents in which token occurs determines the Inverse document frequency.What this ensures is that,if a token occurs frequently in a document that token will have high TF but if that token occurs frequently in majority of documents then it reduces the IDF ,so stop words like an,the,i which occur frequently are penalized and important words which contain the essence of document get a boost.Both these TF and IDF matrices for a particular document are multiplied and normalized to form TF-IDF of a document.
